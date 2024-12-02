@@ -1,0 +1,220 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+ 
+  line-height: 1.6;
+}
+
+/* Main container styles */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.App h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Product list styles */
+.products-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+/* Product card styles */
+.product-card {
+  background: white;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+  border: 1px solid #2f252518;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image container */
+.product-image-container {
+  position: relative;
+
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Product info styles */
+.product-info {
+  padding: 15px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.product-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Price and details styles */
+.product-price {
+  font-size: 1.4rem;
+  color: #2ecc71;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-price::before {
+  content: '$';
+  font-size: 1rem;
+}
+
+/* Loading spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #2ecc71;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  .App h1 {
+    font-size: 2rem;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .product-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-title {
+    font-size: 1.1rem;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Add this to your CSS file */
+.product-rating {
+display: flex;
+align-items: center;
+gap: 4px;
+margin: 10px 0;
+}
+
+.stars {
+color: #FFD700;  /* Golden color for stars */
+display: flex;
+gap: 2px;
+}
+
+.rating-number {
+color: #666;
+font-size: 0.9rem;
+margin-left: 5px;
+}
+
+.product-brand, 
+.product-category, 
+.product-stock, 
+.product-id, 
+.product-discountPercentage {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: transparent;
+  color: #e4c727;
+  font-weight: bold;
+  text-align: start;
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effects */
+.product-brand:hover {
+  background-color: #ffeb3b;
+  color: #e09129;
+}
+
+.product-category:hover {
+  background-color: #f0f4c3;
+  color: #4caf50;
+}
+
+.product-stock:hover {
+  background-color: #ffccbc;
+  color: #e64a19;
+}
+
+.product-id:hover {
+  background-color: #c5cae9;
+  color: #3f51b5;
+}
+
+.product-discountPercentage:hover {
+  background-color: #d1c4e9;
+  color: #7e57c2;
+}
